@@ -11,16 +11,15 @@ TOOLS="/root/tools"
 BIN="/usr/bin" # make sure the folder exists 
 
 
-#updating system
-echo -e "\e[31m[*]Updating the system"m
-apt update
-apt -y upgrade
-
-
 echo -e "\e[31m[*]Removing XFCE and installing gnome desktop"m
 #remove xfce desktop and install gnome 
 apt-get remove -y xfce4 xfce4-places-plugin xfce4-goodies
 apt-get install -y gnome-core kali-defaults kali-root-login desktop-base
+
+#updating system
+echo -e "\e[31m[*]Updating the system"m
+apt update
+apt -y upgrade
 
 
 #these programs exists in Kali Linux's repository and could be installed with apt install 
