@@ -5,11 +5,6 @@
 #tested on kali light 
 
 
-if [ $script_runner == "root" ] ; then
-  echo -e "\nThis script must be run as a normal user with sudo privileges\n"
-  exit 1
-fi
-
 #Configure Settings
 #tools folder
 TOOLS="/root/tools"
@@ -102,10 +97,9 @@ windows-binaries
 wireshark
 yersinia
 veil 
-
 ) 
 
-for t in ${apt_softwares[@]}; do 
+for t in ${desktop_installation[@]}; do 
     echo -e "\e[31m[*]Installing: $t"m
 	apt -y install $t 
 done 
@@ -146,7 +140,7 @@ source ~/.bashrc
 cd $TOOLS 
 
 #------------------------------------------------------------------------------------
-git section (Downloads scripts from github) 
+#git section (Downloads scripts from github) 
 
 echo -e "\e[31m[*]Installing: pth-toolkit"m
 git clone https://github.com/byt3bl33d3r/pth-toolkit.git pth-toolkit
