@@ -23,14 +23,6 @@ apt-get remove -y xfce4 xfce4-places-plugin xfce4-goodies
 apt-get install -y gnome-core kali-defaults kali-root-login desktop-base
 
 
-echo -e "\e[31m[*]Installing Sublime"m
-#Install sublime
-wget -qO - https://download.sublimetext.com/sublimehq-pub.gpg | sudo apt-key add -
-apt-get install apt-transport-https
-echo "deb https://download.sublimetext.com/ apt/stable/" | sudo tee /etc/apt/sources.list.d/sublime-text.list
-apt update
-apt install -y sublime-text
-
 #these programs exists in Kali Linux's repository and could be installed with apt install 
 
 desktop_installation=(
@@ -409,7 +401,7 @@ echo -e "\e[31m[*]Installing: empire"m
 #empire 
 git clone https://github.com/EmpireProject/Empire.git empire
 cd empire 
-echo "toor321" | ./setup/install.sh./setup/install.sh
+echo "toor" | ./setup/install.sh./setup/install.sh
 pip install pefile
 sudo ln -s $(pwd)/empire $BIN/empire
 cd $TOOLS 
@@ -431,3 +423,4 @@ wget https://github.com/BloodHoundAD/BloodHound/blob/master/Ingestors/SharpHound
 ln -s /usr/share/doc/python3-impacket/examples/* $BIN
 
 cd $TOOLS 
+echo -e "\e[31m[*]Finished Installation!"m
